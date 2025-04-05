@@ -9,7 +9,8 @@ const Admins = () => {
     const fetchedAdmins = [
       { id: 1, name: 'Ravi Sharma', email: 'ravi@school.com' },
       { id: 2, name: 'Meera Nair', email: 'meera@school.com' },
-      { id: 3, name: 'SaiKumar', email: 'sai@school.com' }
+      { id: 3, name: 'SaiKumar', email: 'sai@school.com' },
+      { id: 4, name: 'Saiteja', email: 'teja@school.com' }
     ];
     setAdmins(fetchedAdmins);
   }, []);
