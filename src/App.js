@@ -3,7 +3,7 @@ import Navbar from "./components/NavbarComponent/Navbar";
 
 import Home from "./pages/HomeComponent/Home";
 import Admins from "./pages/AdminComponent/Admins";
-import Faculty from "./pages/Faculty/Faculty";
+import Faculty from "./pages/FacultyComponent/Faculty";
 import Contact from "./pages/ContactComponent/Contact";
 
 
