@@ -9,3 +9,56 @@
   border-radius: 8px;
   background-color: #f9f9f9;
 }
+
+.login-popup {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.login-popup input {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+.login-popup button {
+  background: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.add-admin-btn{
+  background: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.admin-update-btn{
+  background: #20ba9c;
+  color: white;
+  padding: 8px 16px;
+  border: none; 
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.admin-delete-btn{
+  background: #b8252f;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}

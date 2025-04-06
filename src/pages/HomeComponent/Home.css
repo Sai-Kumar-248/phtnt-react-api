@@ -1,7 +1,112 @@
 .home-container {
-  padding: 24px;
-  background-color: #f0f8ff;
-  border-radius: 8px;
-  margin: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  
+  background-image: 
+  url('/public/images/bg-transparent.png');
+}
+.h2 {
+  color: #fff8fc;
+}
+.h3{
+  color: aliceblue;
+}
+.slider img {
+  width: 80%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 20px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.why-iish {
+  padding: 40px 20px;
+  background-color: #94bacf;
+  border-radius: 20px;
+}
+
+
+.desktop-img {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-iish-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 20px;
+}
+
+.box {
+
+  padding: 20px;
+  border-radius: 20px;
+  width: 260px;
+  text-align: center;
+  justify-content: center;
+  background-color: #458059;
+   display: flex
+;
+  flex-direction: column;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.box ul {
+  padding: 0;
+  list-style: none;
+}
+
+.box li {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.image img {
+  width: 50px;
+  height: 50px;
+}
+
+.text h3 {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #03070f;
+}
+
+/* Rounded corner classes */
+.rounded-top-left {
+  border-radius: 30px 0 0 0;
+}
+
+.rounded-bottom-left {
+  border-radius: 0 0 0 30px;
+}
+
+.rounded-top-right {
+  border-radius: 0 30px 0 0;
+}
+
+.rounded-bottom-right {
+  border-radius: 0 0 30px 0;
+}
+.footer-cards {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+.footer-cards .box ul {
+  padding-left: 1rem;
+}
+.footer-cards .box p {
+  font-size: 14px;
+  line-height: 1.6;
 }
