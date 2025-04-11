@@ -4,51 +4,55 @@ import './Admins.css';
 const Admins = () => {
   const [admins, setAdmins] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [showLogin, setShowLogin] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
   const [credentials, setCredentials] = useState({ username: '', password: '' });
 
   useEffect(() => {
-    const fetchedAdmins = [
-      { id: 1, name: 'Ravi Sharma', email: 'ravi@school.com' },
-      { id: 2, name: 'Meera Nair', email: 'meera@school.com' },
+    const sampleAdmins = [
+      { id: 1, name: 'Bala Kishan', email: 'balakishan@gmail.com' },
+      { id: 2, name: 'Shyamala', email: 'shyamala@school.com' },
     ];
-    setAdmins(fetchedAdmins);
+    setAdmins(sampleAdmins);
   }, []);
 
-  const handleLogin = () => {
-    // Dummy login - replace with API call later
-    const validUsername = 'admin';
-    const validPassword = 'admin123';
+  const triggerLogin = () => {
+    if (!isAuthenticated) setShowLogin(true);
+  };
 
-    if (
-      credentials.username === validUsername &&
-      credentials.password === validPassword
-    ) {
+  const handleLogin = () => {
+    if (credentials.username === 'admin' && credentials.password === 'admin123') {
       setIsAuthenticated(true);
       setShowLogin(false);
     } else {
-      alert('Invalid credentials. Try again!');
+      alert('Invalid login. Try again!');
     }
   };
 
-  const handleDelete = (id) => {
-    const updatedAdmins = admins.filter((admin) => admin.id !== id);
-    setAdmins(updatedAdmins);
-  };
-
   const handleUpdate = (id) => {
-    const updatedAdmins = admins.map((admin) => {
+    if (!isAuthenticated) return triggerLogin();
+    const updated = admins.map((admin) => {
       if (admin.id === id) {
         const newName = prompt('Enter new name:', admin.name);
         const newEmail = prompt('Enter new email:', admin.email);
-        return { ...admin, name: newName || admin.name, email: newEmail || admin.email };
+        return {
+          ...admin,
+          name: newName || admin.name,
+          email: newEmail || admin.email,
+        };
       }
       return admin;
     });
-    setAdmins(updatedAdmins);
+    setAdmins(updated);
   };
 
-  const handleAddAdmin = () => {
+  const handleDelete = (id) => {
+    if (!isAuthenticated) return triggerLogin();
+    const filtered = admins.filter((admin) => admin.id !== id);
+    setAdmins(filtered);
+  };
+
+  const handleAdd = () => {
+    if (!isAuthenticated) return triggerLogin();
     const name = prompt('Enter admin name:');
     const email = prompt('Enter admin email:');
     if (name && email) {
@@ -65,7 +69,20 @@ const Admins = () => {
     <div className="admins-container">
       <h2>👨‍💼 Admins</h2>
 
-      {showLogin && !isAuthenticated && (
+      <div className="admin-list">
+        {admins.map((admin) => (
+          <div key={admin.id} className="admin-card">
+            <h3>{admin.name}</h3>
+            <p><strong>Email:</strong> {admin.email}</p>
+            <button className='update-admin-btn ' onClick={() => handleUpdate(admin.id)}>Update</button>
+            <button className='delete-admin-btn' onClick={() => handleDelete(admin.id)}>Delete</button>
+          </div>
+        ))}
+      </div>
+
+      <button className="add-admin-btn" onClick={handleAdd}>Add Admin</button>
+
+      {showLogin && (
         <div className="login-popup">
           <h3>🔐 Admin Login</h3>
           <input
@@ -82,26 +99,6 @@ const Admins = () => {
           />
           <button onClick={handleLogin}>Login</button>
         </div>
-      )}
-
-      {!isAuthenticated && (
-        <p>Please sign in to manage admin records.</p>
-      )}
-
-      {isAuthenticated && (
-        <>
-          <ul>
-            {admins.map((admin) => (
-              <li key={admin.id} className="admin-card">
-                <p><strong>Name:</strong> {admin.name}</p>
-                <p><strong>Email:</strong> {admin.email}</p>
-                <button className="admin-update-btn" onClick={() => handleUpdate(admin.id)}>Update</button>
-                <button className="admin-delete-btn" onClick={() => handleDelete(admin.id)}>Delete</button>
-              </li>
-            ))}
-          </ul>
-          <button className="add-admin-btn" onClick={handleAddAdmin}>Add Admin</button>
-        </>
       )}
     </div>
   );

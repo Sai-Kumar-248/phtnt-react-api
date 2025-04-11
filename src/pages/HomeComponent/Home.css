@@ -58,7 +58,9 @@
   flex-direction: column;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
-
+.box text{
+  text-align: center;
+}
 .box ul {
   padding: 0;
   list-style: none;

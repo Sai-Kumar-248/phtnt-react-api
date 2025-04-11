@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <h2 className='h2'>🏫 Welcome to Panchatantra School</h2>
-      <h3 className='h3'>School Of Excellence</h3>
+      <h3 className='h3'>Elementary School Of Excellence</h3>
 
       {/* Image Slider */}
       <section className="slider">
@@ -114,8 +114,8 @@ const Home = () => {
           <h3>📍 Address & Contact</h3>
           <p style={{ marginTop: '10px', textAlign: 'left' }}>
             Panchatantra School,<br />
-            Near Green Valley Park,<br />
-            Hyderabad, Telangana - 500084<br />
+            WXC8+8M7, Cherial, 506223,<br />
+            Hyderabad, Telangana<br />
             📞 +91 98765 43210<br />
             ✉️ info@panchatantraschool.com
           </p>
