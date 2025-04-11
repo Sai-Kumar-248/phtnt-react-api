@@ -7,6 +7,7 @@ import Admins from "./pages/AdminComponent/Admins";
 import Faculty from "./pages/FacultyComponent/Faculty";
 import Contact from "./pages/ContactComponent/Contact";
 import Register from './pages/RegisterComponent/Register';
+import Classes from './pages/ClassComponent/Classes';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
       <Route path="/Register" element={<Register />} />
         <Route path="/" element={<Home />} />
         <Route path="/admins" element={<Admins />} />
-      
+        <Route path="/classes" element={<Classes/>}/>
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

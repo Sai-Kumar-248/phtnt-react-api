@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Register.css';
 
 const Register = () => {
@@ -11,6 +12,8 @@ const Register = () => {
     grade: 'Grade 1',
   });
 
+  const [submittedEmails, setSubmittedEmails] = useState([]);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,9 +23,37 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted data:', formData);
-    alert('Admission form submitted successfully!');
-    // TODO: send formData to backend
+
+    if (submittedEmails.includes(formData.email)) {
+      alert('You have already submitted this application.');
+      return;
+    }
+
+    const templateParams = {
+      parent_name: formData.parentName,
+      child_name: formData.childName,
+      mobile: formData.mobile,
+      email: formData.email,
+      curriculum: formData.curriculum,
+      grade: formData.grade,
+    };
+
+    emailjs
+      .send(
+        'service_01yz2a1', // Replace with your service ID
+        'template_0i8yx2q', // Replace with your template ID
+        templateParams,
+        'oy7KvpDNxtBa-zhLZ' // Replace with your EmailJS public key
+      )
+      .then((result) => {
+        console.log(result.text);
+        alert('Admission form submitted successfully!');
+        setSubmittedEmails([...submittedEmails, formData.email]);
+      })
+      .catch((error) => {
+        console.error(error.text);
+        alert('Something went wrong. Please try again.');
+      });
   };
 
   return (

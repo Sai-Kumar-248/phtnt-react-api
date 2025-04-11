@@ -1,5 +1,33 @@
 .classes-container {
-  padding: 24px;
-  background-color: #e7f3ff;
-  border-radius: 8px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.class-section {
+  margin-top: 30px;
+}
+
+.class-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.class-card {
+  background-color: #e0f7fa;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.class-card:hover {
+  background-color: #b2ebf2;
+  transform: scale(1.05);
 }
